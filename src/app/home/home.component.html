@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="node_options">
+    <ng-select #ngSelectComponent (change)="onNodeSelect($event)" [hideSelected]="true" placeholder="Add new node...">
+      <ng-option *ngFor="let node of nodes" [value]="node">
+        <div class="node_option">
+          <img class="node_img" [src]="node.img" />
+          <div>
+            <span class="node_name">{{ node.name }}</span>
+            <span class="node_role">{{ node.role }}</span>
+          </div>
+        </div>
+      </ng-option>
+    </ng-select>
+  </div>
+  <!--Using items input-->
+  <!-- <ng-select [items]="cars" bindLabel="name" bindValue="id" [(ngModel)]="selectedCar"> </ng-select> -->
+
+  <!-- Nodes Display -->
+  <div class="nodes_options_container gap-3">
+    <div *ngFor="let node of selectedNodes; let i = index">
+      <div class="node_workflow" cdkDragBoundary=".nodes_options_container" cdkDrag>
+        <div cdkDrag>
+          <div class="custom-placeholder" *cdkDragPlaceholder></div>
+          <h5>{{ node.name }}</h5>
+          <img [src]="node.img" />
+          <p>{{ node.role }}</p>
+          <i (click)="removeNode(i)" class="delete far fa-times-circle"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span class="footer">
+    Features:
+    <ul>
+      <li>Select any Node from the List</li>
+      <li>You can drag and drop each node to different location</li>
+      <li>On Node hover, you can remove the node.</li>
+    </ul>
+  </span>
+</div>

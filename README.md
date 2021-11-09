@@ -4,6 +4,8 @@ Web project starter kit including modern tools and workflow based on
 [angular-cli](https://github.com/angular/angular-cli), best practices from the community, a scalable base template and
 a good learning base.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fe2003ad-6d30-4ec1-b14a-8691a8f7c8ea/deploy-status)](https://app.netlify.com/sites/vigorous-hamilton-37b99b/deploys)
+
 ### Benefits
 
 - Quickstart a project in seconds and focus on features, not on frameworks or tools
